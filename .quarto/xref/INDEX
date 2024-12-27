@@ -1,0 +1,86 @@
+{
+  "index.qmd": {
+    "index.html": "7d075707"
+  },
+  "intro.qmd": {
+    "intro.html": "bda976bb"
+  },
+  "summary.qmd": {
+    "summary.html": "44c9e764"
+  },
+  "references.qmd": {
+    "references.html": "2c9ecb2c"
+  },
+  "code-sets.qmd": {
+    "code-sets.html": "b2c9c117"
+  },
+  "claims-data.qmd": {
+    "claims-data.html": "282113af"
+  },
+  "provider-npi.qmd": {
+    "provider-npi.html": "52c219c7"
+  },
+  "member-months.qmd": {
+    "member-months.html": "bb95defd"
+  },
+  "service-categories.qmd": {
+    "service-categories.html": "a141efd8"
+  },
+  "attribution.qmd": {
+    "attribution.html": "fb645dca"
+  },
+  "acute-inpatient.qmd": {
+    "acute-inpatient.html": "f2a7fbc8"
+  },
+  "emergency-dept.qmd": {
+    "emergency-dept.html": "88ebfb37"
+  },
+  "readmissions.qmd": {
+    "readmissions.html": "f6b34caa"
+  },
+  "risk-adjustment.qmd": {
+    "risk-adjustment.html": "e3403b63"
+  },
+  "provider-data.qmd": {
+    "provider-data.html": "e654a3f5"
+  },
+  "quality-measures.qmd": {
+    "quality-measures.html": "d6b1a448"
+  },
+  "hip-replacement.qmd": {
+    "hip-replacement.html": "fc920128"
+  },
+  "cms-claims.qmd": {
+    "cms-claims.html": "66d8f0d7"
+  },
+  "other-encounter-types.qmd": {
+    "other-encounter-types.html": "4ed412a2"
+  },
+  "oppty-analysis.qmd": {
+    "oppty-analysis.html": "6721d01f"
+  },
+  "encounters.qmd": {
+    "encounters.html": "61da0a89"
+  },
+  "medications.qmd": {
+    "medications.html": "6149f339"
+  },
+  "preventable-visits.qmd": {
+    "preventable-visits.html": "8bc430a6"
+  },
+  "multiple-myeloma.qmd": {
+    "multiple-myeloma.html": "fd571e59"
+  },
+  "cancer-drugs.qmd": {
+    "cancer-drugs.html": "dd00114c"
+  },
+  "claims-adr.qmd": {
+    "claims-adr.html": "0e4147e7"
+  },
+  "acute-inpatient.ipynb": {
+    "acute-inpatient.html": "71091300"
+  },
+  "claims-data-elements.qmd": {
+    "claims-data-elements.html": "9518f3e6"
+  }
+}

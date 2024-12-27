@@ -1,0 +1,189 @@
+# Service Categories
+
+In the Tuva Project, we've created a service category grouper to help us analyze payment and utilization metrics. We use it to categorize medical claim lines.
+
+**Data Elements**
+
+The data elements that we use to create this grouper are as follows:
+
+- **bill_type_code:** Bill type code for the claim (institutional claims only).
+- **revenue_center_code:** Revenue center code for the claim line (institutional only and typically multiple codes per claim).
+- **ms_drg_code:** MS-DRG for the claim (inpatient claims only).
+- **place_of_service_code:** Place of service for the claim (professional claims only).
+- **hcpcs_code:** HCPCS level 1 or level 2 code for the claim line. Most definitions use the [CCS groupings](https://hcup-us.ahrq.gov/toolssoftware/ccs_svcsproc/ccssvcproc.jsp) of codes instead of referencing codes individually.
+- **icd_diagnosis_code:** Typically referenced through [CCSR groupings](https://hcup-us.ahrq.gov/toolssoftware/ccsr/ccs_refined.jsp) instead of individual codes.
+- **npi:** Used to reference the taxonomy code of a facility NPI and a provider's specialty.
+
+
+The Tuva Project Service Category Grouper has three levels in a hierarchy with each subcategory rolling up to a high level category. Because all subcategories roll up to one and only one higher level category, the sum of all the logic for each subcategory in a category is the same as the logic for the category. As such, we'll describe the higher level categories conceptually without codes, and then we'll define each subcategory sharing the code sets. See table below for a quick view of the categories and subcategories:
+
+| SERVICE_CATEGORY_1 | SERVICE_CATEGORY_2 | SERVICE_CATEGORY_3 |
+| --- | --- | --- |
+| inpatient | acute inpatient | l/d - cesarean delivery |
+| inpatient | acute inpatient | l/d - newborn |
+| inpatient | acute inpatient | l/d - newborn nicu |
+| inpatient | acute inpatient | l/d - other |
+| inpatient | acute inpatient | l/d - vaginal delivery |
+| inpatient | acute inpatient | medical |
+| inpatient | acute inpatient | surgical |
+| inpatient | acute inpatient | acute inpatient - other |
+| inpatient | inpatient hospice | inpatient hospice |
+| inpatient | inpatient psychiatric | inpatient psychiatric |
+| inpatient | inpatient rehabilitation | inpatient rehabilitation |
+| inpatient | inpatient substance use | inpatient substance use |
+| inpatient | skilled nursing | skilled nursing |
+| office-based | office-based pt/ot/st | office-based pt/ot/st |
+| office-based | office-based radiology | ct |
+| office-based | office-based radiology | general |
+| office-based | office-based radiology | mri |
+| office-based | office-based radiology | pet |
+| office-based | office-based surgery | office-based surgery |
+| office-based | office-based visit | office-based visit |
+| office-based | telehealth visit | telehealth visit |
+| office-based | office-based other | office-based other |
+| outpatient | ambulatory surgery center | ambulatory surgery center |
+| outpatient | dialysis | dialysis |
+| outpatient | emergency department | emergency department |
+| outpatient | home health | home health |
+| outpatient | observation | observation |
+| outpatient | outpatient hospice | outpatient hospice |
+| outpatient | outpatient hospital or clinic | outpatient hospital or clinic |
+| outpatient | outpatient psychiatric | outpatient psychiatric |
+| outpatient | outpatient pt/ot/st | outpatient pt/ot/st |
+| outpatient | outpatient radiology | ct |
+| outpatient | outpatient radiology | general |
+| outpatient | outpatient radiology | mri |
+| outpatient | outpatient radiology | pet |
+| outpatient | outpatient rehabilitation | outpatient rehabilitation |
+| outpatient | outpatient substance use | outpatient substance use |
+| outpatient | outpatient surgery | outpatient surgery |
+| outpatient | pharmacy | pharmacy |
+| outpatient | urgent care | urgent care |
+| ancillary | ambulance | ambulance |
+| ancillary | durable medical equipment | durable medical equipment |
+| ancillary | lab | lab |
+| other | other | other |
+
+When developing the service category grouper we kept the following principles in mind:
+
+- **Cardinality is Key:** If there were hundreds of categories, it would be too hard for a human to make sense of what was going on. But if you only had 2 categories for example, it wouldn't be enlightening. Almost all insights would come from breaking it down further.
+- **Mutually Exclusive and Exhaustive:** Every healthcare claims can be grouped into one service category and only one service category. This implies that summing the total payments for all service categories would equal the sum of all payments for each individual claim.
+- **The "Other" Category Isn't Too Large:** In order to make the grouper Exhaustive, we group everything we can into meaningful categories and then put everything else in the "other" category. If this "other" category is too large, that means we need to break it out into additional meaningful categories.
+- **Hierarchical:** It's a balancing act to try to create groups with low cardinality but providing enough homogeneity inside each group for analysis to be actionable. This often leads us to create hierarchical groupers so that you can see high level groups first and then drill in to get more specific while still keeping the broader context simple.
+- **Feasible:** Any categorization grouper is only useful if you're able to group things into the categories using data elements that are readily available and populated reasonably consistently.
+
+The Tuva Project Service Category Grouper categorizes most institutional claims at the claim level using the bill type code for each claim. All inpatient institutional claims are defined at the claim level, while some outpatient institutional service categories are grouped at the line level (such as radiology which is defined using HCPCS codes). 
+Professional claims are also defined at the claim line level.
+
+# Service Categories
+
+## Inpatient
+
+Service Category 2 (Click to expand and see specific codes that make up each category. Service category 3 is listed where applicable.)
+
+<details>
+<summary><strong>Acute Inpatient</strong></summary>
+
+### Institutional Claims {.unnumbered}
+- **DRG Codes**:
+  - Any valid Diagnosis-Related Group (MS-DRG or APR-DRG) code: These classify hospital cases into groups expected to have similar hospital resource use.
+- **Bill Type Codes**:
+  - **11x**: General Inpatient 
+  - **12x**: Inpatient Psychiatric Services 
+
+### Professional Claims {.unnumbered}
+- **Place of Service Code**:
+  - **21**: Inpatient Hospital 
+
+### Service Category 3 {.unnumbered}
+- **Medical**: 
+  - DRGs designated as Medical per CMS DRG definition
+- **Surgical**: 
+  - DRGs designated as Surgical per CMS DRG definition
+- **Acute Inpatient**: 
+  - Any other acute inpatient claims that don't roll up to other service categories.
+- **L/D Vaginal Delivery**:
+  - **768**: Vaginal delivery with complicating diagnoses.
+  - **796**: Vaginal delivery with other specified conditions.
+  - **797**: Vaginal delivery with O.R. procedure except sterilization and/or D&C.
+  - **798**: Vaginal delivery with sterilization and/or D&C.
+  - **805**: Vaginal delivery without complicating diagnoses.
+  - **806**: Vaginal delivery with tubal ligation/sterilization.
+  - **807**: Vaginal delivery with antepartum conditions.
+- **L/D Cesarean Delivery**:
+  - **783**: Cesarean delivery with complicating diagnoses.
+  - **784**: Cesarean delivery with sterilization and/or D&C.
+  - **785**: Cesarean delivery with O.R. procedure except sterilization and/or D&C.
+  - **786**: Cesarean delivery with other specified conditions.
+  - **787**: Cesarean section without complicating diagnoses.
+  - **788**: Cesarean section with tubal ligation/sterilization.
+
+</details>
+
+<details>
+<summary><strong>Inpatient Substance Use</strong></summary>
+
+### Institutional Claims {.unnumbered}
+- **Taxonomy Codes**:
+  - **324500000X**: Substance Abuse Rehabilitation Facility
+  - **261QR0405X**: Substance Use Disorder Rehabilitation Facility
+  - **101YA0400X**: Addiction (Substance Use Disorder)
+
+- **CCSR Category Codes**:
+  - **MBD026**: Substance Use Disorders
+  - **SYM008**: Mental Health and Substance Use Interventions
+  - **MBD025**: Alcohol Use Disorders
+  - **SYM009**: Mental Health and Substance Use Assessment
+  - **MBD034**: Drug Use Disorders
+
+### Professional Claims {.unnumbered}
+- None
+
+</details>
+
+<details>
+<summary><strong>Inpatient Hospice</strong></summary>
+
+### Institutional Claims {.unnumbered}
+- **Bill Type Codes**:
+  - **82x**: Inpatient hospice services
+
+### Professional Claims {.unnumbered}
+- **Place of Service Code**:
+  - **34**: Hospice facility
+
+</details>
+
+## Outpatient
+
+<details>
+<summary><strong>Ambulatory Surgery Center</strong></summary>
+
+### Institutional Claims {.unnumbered}
+- **Revenue Codes**:
+  - **0490**: Ambulatory Surgical Care - General classification
+  - **0499**: Ambulatory Surgical Care - Other
+- **Taxonomy Code**:
+  - **261QA1903X**: Ambulatory Surgical Center
+
+### Professional Claims {.unnumbered}
+- **Place of Service Code**:
+  - **24**: Ambulatory Surgical Center
+
+</details>
+
+<details>
+<summary><strong>Dialysis</strong></summary>
+
+### Institutional Claims {.unnumbered}
+- **Bill Type Codes**: 
+  - **72**: Independent Renal Dialysis Center
+- **Revenue Center Codes**:
+  - **082x**: Hemodialysis
+  - **083x**: Peritoneal Dialysis
+
+### Professional Claims {.unnumbered}
+- **Place of Service Code**:
+  - **65**: End-Stage Renal Disease Treatment Facility
+
+</details>

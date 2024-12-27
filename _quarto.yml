@@ -1,0 +1,60 @@
+project:
+  type: book
+
+website:
+  site-url: https://www.thetuvaproject.com
+  site-path: /knowledge
+
+book:
+  title: The Tuva Project
+  # author: "Norah Jones"
+  date: "12/22/2024"
+
+  # cover-image: mages/tuva-icon.png
+  favicon: images/tuva-icon.png
+  chapters:
+    - index.qmd
+    - code-sets.qmd
+    - part: "Claims Data"
+      chapters:
+        - claims-data.qmd
+        - claims-data-elements.qmd
+        - claims-adr.qmd
+        - provider-data.qmd
+        - member-months.qmd
+        - attribution.qmd
+        - service-categories.qmd
+        - encounters.qmd
+        # - medications.qmd  
+
+    - part: "Advanced Topics"
+      chapters:
+        # - emergency-dept.qmd
+        # - acute-inpatient.ipynb
+        - readmissions.qmd
+        - risk-adjustment.qmd
+        
+    # - part: "Case Studies"
+    #   chapters:
+        # - oppty-analysis.qmd
+        # - hip-replacement.qmd
+        # - multiple-myeloma.qmd
+        # - cancer-drugs.qmd
+
+    # - part: "Appendix"
+    #   chapters:
+    #     - cms-claims.qmd
+
+    # - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    code-fold: true
+  pdf:
+    documentclass: scrreprt
+
+
+
