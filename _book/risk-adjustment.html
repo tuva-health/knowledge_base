@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Risk Adjustment – The Tuva Project</title>
+<title>11&nbsp; Risk Adjustment – The Tuva Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./readmissions.html" rel="prev">
-<link href="./images/tuva-icon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./readmissions.html">Advanced Topics</a></li><li class="breadcrumb-item"><a href="./risk-adjustment.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Risk Adjustment</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./acute-inpatient.html">Advanced Topics</a></li><li class="breadcrumb-item"><a href="./risk-adjustment.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Risk Adjustment</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -188,14 +187,20 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./acute-inpatient.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Acute Inpatient Stays</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./readmissions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Readmissions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Readmissions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./risk-adjustment.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Risk Adjustment</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Risk Adjustment</span></span></a>
   </div>
 </li>
       </ul>
@@ -210,29 +215,29 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-risk-adjustment" id="toc-what-is-risk-adjustment" class="nav-link active" data-scroll-target="#what-is-risk-adjustment"><span class="header-section-number">10.1</span> What is risk adjustment?</a></li>
-  <li><a href="#what-are-hccs" id="toc-what-are-hccs" class="nav-link" data-scroll-target="#what-are-hccs"><span class="header-section-number">10.2</span> What are HCCs?</a></li>
-  <li><a href="#comparison-between-hhs-hcc-and-cms-hcc" id="toc-comparison-between-hhs-hcc-and-cms-hcc" class="nav-link" data-scroll-target="#comparison-between-hhs-hcc-and-cms-hcc"><span class="header-section-number">10.3</span> Comparison between HHS-HCC and CMS-HCC</a></li>
-  <li><a href="#faq" id="toc-faq" class="nav-link" data-scroll-target="#faq"><span class="header-section-number">10.4</span> FAQ</a>
+  <li><a href="#what-is-risk-adjustment" id="toc-what-is-risk-adjustment" class="nav-link active" data-scroll-target="#what-is-risk-adjustment"><span class="header-section-number">11.1</span> What is risk adjustment?</a></li>
+  <li><a href="#what-are-hccs" id="toc-what-are-hccs" class="nav-link" data-scroll-target="#what-are-hccs"><span class="header-section-number">11.2</span> What are HCCs?</a></li>
+  <li><a href="#comparison-between-hhs-hcc-and-cms-hcc" id="toc-comparison-between-hhs-hcc-and-cms-hcc" class="nav-link" data-scroll-target="#comparison-between-hhs-hcc-and-cms-hcc"><span class="header-section-number">11.3</span> Comparison between HHS-HCC and CMS-HCC</a></li>
+  <li><a href="#faq" id="toc-faq" class="nav-link" data-scroll-target="#faq"><span class="header-section-number">11.4</span> FAQ</a>
   <ul class="collapse">
-  <li><a href="#footnotes" id="toc-footnotes" class="nav-link" data-scroll-target="#footnotes"><span class="header-section-number">10.4.1</span> Footnotes</a></li>
+  <li><a href="#footnotes" id="toc-footnotes" class="nav-link" data-scroll-target="#footnotes"><span class="header-section-number">11.4.1</span> Footnotes</a></li>
   </ul></li>
-  <li><a href="#cms-risk-score-models" id="toc-cms-risk-score-models" class="nav-link" data-scroll-target="#cms-risk-score-models"><span class="header-section-number">10.5</span> CMS Risk Score Models</a></li>
-  <li><a href="#risk-score-calculation" id="toc-risk-score-calculation" class="nav-link" data-scroll-target="#risk-score-calculation"><span class="header-section-number">10.6</span> Risk Score Calculation</a></li>
-  <li><a href="#cms-risk-adjustment-files" id="toc-cms-risk-adjustment-files" class="nav-link" data-scroll-target="#cms-risk-adjustment-files"><span class="header-section-number">10.7</span> CMS Risk Adjustment Files</a>
+  <li><a href="#cms-risk-score-models" id="toc-cms-risk-score-models" class="nav-link" data-scroll-target="#cms-risk-score-models"><span class="header-section-number">11.5</span> CMS Risk Score Models</a></li>
+  <li><a href="#risk-score-calculation" id="toc-risk-score-calculation" class="nav-link" data-scroll-target="#risk-score-calculation"><span class="header-section-number">11.6</span> Risk Score Calculation</a></li>
+  <li><a href="#cms-risk-adjustment-files" id="toc-cms-risk-adjustment-files" class="nav-link" data-scroll-target="#cms-risk-adjustment-files"><span class="header-section-number">11.7</span> CMS Risk Adjustment Files</a>
   <ul class="collapse">
-  <li><a href="#monthly-membership-detail-report-mmr" id="toc-monthly-membership-detail-report-mmr" class="nav-link" data-scroll-target="#monthly-membership-detail-report-mmr"><span class="header-section-number">10.7.1</span> Monthly Membership Detail Report (MMR)</a></li>
-  <li><a href="#mao-004" id="toc-mao-004" class="nav-link" data-scroll-target="#mao-004"><span class="header-section-number">10.7.2</span> MAO-004</a></li>
-  <li><a href="#model-output-report-mor" id="toc-model-output-report-mor" class="nav-link" data-scroll-target="#model-output-report-mor"><span class="header-section-number">10.7.3</span> Model Output Report (MOR)</a></li>
+  <li><a href="#monthly-membership-detail-report-mmr" id="toc-monthly-membership-detail-report-mmr" class="nav-link" data-scroll-target="#monthly-membership-detail-report-mmr"><span class="header-section-number">11.7.1</span> Monthly Membership Detail Report (MMR)</a></li>
+  <li><a href="#mao-004" id="toc-mao-004" class="nav-link" data-scroll-target="#mao-004"><span class="header-section-number">11.7.2</span> MAO-004</a></li>
+  <li><a href="#model-output-report-mor" id="toc-model-output-report-mor" class="nav-link" data-scroll-target="#model-output-report-mor"><span class="header-section-number">11.7.3</span> Model Output Report (MOR)</a></li>
   </ul></li>
-  <li><a href="#sample-risk-score-calculation-of-a-single-patient" id="toc-sample-risk-score-calculation-of-a-single-patient" class="nav-link" data-scroll-target="#sample-risk-score-calculation-of-a-single-patient"><span class="header-section-number">10.8</span> Sample Risk Score Calculation of a single patient</a>
+  <li><a href="#sample-risk-score-calculation-of-a-single-patient" id="toc-sample-risk-score-calculation-of-a-single-patient" class="nav-link" data-scroll-target="#sample-risk-score-calculation-of-a-single-patient"><span class="header-section-number">11.8</span> Sample Risk Score Calculation of a single patient</a>
   <ul class="collapse">
-  <li><a href="#calculate-the-demographic-score" id="toc-calculate-the-demographic-score" class="nav-link" data-scroll-target="#calculate-the-demographic-score"><span class="header-section-number">10.8.1</span> Calculate the demographic score</a></li>
-  <li><a href="#calculate-the-disease-score" id="toc-calculate-the-disease-score" class="nav-link" data-scroll-target="#calculate-the-disease-score"><span class="header-section-number">10.8.2</span> Calculate the Disease Score</a></li>
-  <li><a href="#bringing-it-all-together" id="toc-bringing-it-all-together" class="nav-link" data-scroll-target="#bringing-it-all-together"><span class="header-section-number">10.8.3</span> Bringing it all together</a></li>
-  <li><a href="#but-wait-theres-more" id="toc-but-wait-theres-more" class="nav-link" data-scroll-target="#but-wait-theres-more"><span class="header-section-number">10.8.4</span> But wait! There’s more</a></li>
-  <li><a href="#additional-notes" id="toc-additional-notes" class="nav-link" data-scroll-target="#additional-notes"><span class="header-section-number">10.8.5</span> Additional notes</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">10.8.6</span> References</a></li>
+  <li><a href="#calculate-the-demographic-score" id="toc-calculate-the-demographic-score" class="nav-link" data-scroll-target="#calculate-the-demographic-score"><span class="header-section-number">11.8.1</span> Calculate the demographic score</a></li>
+  <li><a href="#calculate-the-disease-score" id="toc-calculate-the-disease-score" class="nav-link" data-scroll-target="#calculate-the-disease-score"><span class="header-section-number">11.8.2</span> Calculate the Disease Score</a></li>
+  <li><a href="#bringing-it-all-together" id="toc-bringing-it-all-together" class="nav-link" data-scroll-target="#bringing-it-all-together"><span class="header-section-number">11.8.3</span> Bringing it all together</a></li>
+  <li><a href="#but-wait-theres-more" id="toc-but-wait-theres-more" class="nav-link" data-scroll-target="#but-wait-theres-more"><span class="header-section-number">11.8.4</span> But wait! There’s more</a></li>
+  <li><a href="#additional-notes" id="toc-additional-notes" class="nav-link" data-scroll-target="#additional-notes"><span class="header-section-number">11.8.5</span> Additional notes</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">11.8.6</span> References</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -240,9 +245,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./readmissions.html">Advanced Topics</a></li><li class="breadcrumb-item"><a href="./risk-adjustment.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Risk Adjustment</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./acute-inpatient.html">Advanced Topics</a></li><li class="breadcrumb-item"><a href="./risk-adjustment.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Risk Adjustment</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Risk Adjustment</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Risk Adjustment</span></h1>
 </div>
 
 
@@ -259,8 +264,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="what-is-risk-adjustment" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="what-is-risk-adjustment"><span class="header-section-number">10.1</span> What is risk adjustment?</h2>
+<section id="what-is-risk-adjustment" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="what-is-risk-adjustment"><span class="header-section-number">11.1</span> What is risk adjustment?</h2>
 <p>Risk adjustment was developed and created to dissuade payers from selectively enrolling patients who are healthy into health plans and make sure payers are compensated fairly for the illness burden of patients. Risk adjustment models are used to calculate payments to healthcare organizations for patients insured by: * Medicare Advantage * Accountable Care Organizations * Most Affordable Care Act plans. <a href="#footnotes">[1]</a></p>
 <p>At a high level, if a patient is sicker or has higher predicted medical cost, the payer insuring that patient will be compensated more.</p>
 <p>A Risk Adjustment Factor Score (“RAF score”) is a measure of the estimated cost of an individual’s care based on demographic factors such as age and gender and their associated disease factors (how costly/sick is the individual patient). This RAF score is then used to calculate payments or reimbursements to these organizations.</p>
@@ -274,12 +279,12 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Each risk adjustment model has in common that it tries to predict medical expense using demographic information and disease factors for patients.</p>
 </section>
-<section id="what-are-hccs" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="what-are-hccs"><span class="header-section-number">10.2</span> What are HCCs?</h2>
+<section id="what-are-hccs" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="what-are-hccs"><span class="header-section-number">11.2</span> What are HCCs?</h2>
 <p>“HCC” stands for Hierarchical Condition Categories. They are sets of medical codes linked to clinical diagnoses that aim to predict cost for acute and chronic health conditions. HCC coding relies on ICD-10-CM coding to assign risk scores to patients. Not all risk adjustment models have to use HCCs, but almost all do.</p>
 </section>
-<section id="comparison-between-hhs-hcc-and-cms-hcc" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="comparison-between-hhs-hcc-and-cms-hcc"><span class="header-section-number">10.3</span> Comparison between HHS-HCC and CMS-HCC</h2>
+<section id="comparison-between-hhs-hcc-and-cms-hcc" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="comparison-between-hhs-hcc-and-cms-hcc"><span class="header-section-number">11.3</span> Comparison between HHS-HCC and CMS-HCC</h2>
 <p>One way to separate HHS and CMS HCC models would be to call them respectively “commercial risk adjustment” (HHS) and “Medicare risk adjustment” (CMS). These two main models are similar but are separate:</p>
 <table class="caption-top table">
 <colgroup>
@@ -324,28 +329,28 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="faq" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="faq"><span class="header-section-number">10.4</span> FAQ</h2>
-<section id="what-does-zero-sum-mean" class="level4" data-number="10.4.0.1">
-<h4 data-number="10.4.0.1" class="anchored" data-anchor-id="what-does-zero-sum-mean"><span class="header-section-number">10.4.0.1</span> What does zero-sum mean?</h4>
+<section id="faq" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="faq"><span class="header-section-number">11.4</span> FAQ</h2>
+<section id="what-does-zero-sum-mean" class="level4" data-number="11.4.0.1">
+<h4 data-number="11.4.0.1" class="anchored" data-anchor-id="what-does-zero-sum-mean"><span class="header-section-number">11.4.0.1</span> What does zero-sum mean?</h4>
 <p>Zero-sum in the context of commercial risk adjustment (HHS-HCC Model) means that there is no government subsidization for private companies in the risk adjustment process. If the illness burden of a state in total increases from the prior year, the government provides no additional funds. What happens during reconciliation is some health insurance companies will have to pay into a pool because they have healthier than average patients. Some organizations will get paid out from that pool because they have sicker than average patients. The total transfer of dollars adds up to $0.</p>
 </section>
-<section id="if-risk-scores-inform-payments-how-are-risk-scores-checked-to-make-sure-they-are-not-overinflated" class="level4" data-number="10.4.0.2">
-<h4 data-number="10.4.0.2" class="anchored" data-anchor-id="if-risk-scores-inform-payments-how-are-risk-scores-checked-to-make-sure-they-are-not-overinflated"><span class="header-section-number">10.4.0.2</span> If risk scores inform payments, how are risk scores checked to make sure they are not overinflated?</h4>
+<section id="if-risk-scores-inform-payments-how-are-risk-scores-checked-to-make-sure-they-are-not-overinflated" class="level4" data-number="11.4.0.2">
+<h4 data-number="11.4.0.2" class="anchored" data-anchor-id="if-risk-scores-inform-payments-how-are-risk-scores-checked-to-make-sure-they-are-not-overinflated"><span class="header-section-number">11.4.0.2</span> If risk scores inform payments, how are risk scores checked to make sure they are not overinflated?</h4>
 <p>Both HHS-HCC and CMS-HCC models go through a validation process which is called “Risk Adjustment Data Validation” (aka RADV). The RADV processes and procedures are different for different risk adjustment models.</p>
 </section>
-<section id="can-you-compare-risk-scores-between-years-to-see-the-illness-burden-of-a-patient-change-over-time" class="level4" data-number="10.4.0.3">
-<h4 data-number="10.4.0.3" class="anchored" data-anchor-id="can-you-compare-risk-scores-between-years-to-see-the-illness-burden-of-a-patient-change-over-time"><span class="header-section-number">10.4.0.3</span> Can you compare risk scores between years to see the illness burden of a patient change over time?</h4>
+<section id="can-you-compare-risk-scores-between-years-to-see-the-illness-burden-of-a-patient-change-over-time" class="level4" data-number="11.4.0.3">
+<h4 data-number="11.4.0.3" class="anchored" data-anchor-id="can-you-compare-risk-scores-between-years-to-see-the-illness-burden-of-a-patient-change-over-time"><span class="header-section-number">11.4.0.3</span> Can you compare risk scores between years to see the illness burden of a patient change over time?</h4>
 <p>This can be done, but is not recommended, especially if using different risk adjustment models between different years. There may be other models that can more accurately reflect illness burden, and risk adjustment is mainly focused on predicted medical expenditure. These two things are correlated, but not necessarily the same.</p>
 </section>
-<section id="footnotes" class="level3" data-number="10.4.1">
-<h3 data-number="10.4.1" class="anchored" data-anchor-id="footnotes"><span class="header-section-number">10.4.1</span> Footnotes</h3>
+<section id="footnotes" class="level3" data-number="11.4.1">
+<h3 data-number="11.4.1" class="anchored" data-anchor-id="footnotes"><span class="header-section-number">11.4.1</span> Footnotes</h3>
 <p>[1] ACA health plans that are not subject to risk adjustment are Grandfathered plans, Short-term, limited-duration plans, Health Reimbursement Arrangements (HRAs), and plans offered by states that have received a waiver from HHS.</p>
 <p>[2] Program of All Inclusive Care for the Elderly</p>
 </section>
 </section>
-<section id="cms-risk-score-models" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="cms-risk-score-models"><span class="header-section-number">10.5</span> CMS Risk Score Models</h2>
+<section id="cms-risk-score-models" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="cms-risk-score-models"><span class="header-section-number">11.5</span> CMS Risk Score Models</h2>
 <p>CMS has implemented multiple models to address differences in program costs and the beneficiary population. For example, Medicare Part C versus Medicare Part D plans, the ESRD population (End-Stage Renal Disease) versus members without ESRD, or members enrolled in the Program of All Inclusive Care for the Elderly (PACE). CMS also segments each model, creating subpopulations with distinct cost patterns, such as dual enrollment in Medicaid or living in the community versus an institution.</p>
 <p>The full list of models are:</p>
 <ul>
@@ -363,8 +368,8 @@ ul.task-list li input[type="checkbox"] {
 <p>CMS also performs model calibration based on diagnostic and expenditure data. These changes can be found in the annual rate announcements on <a href="https://www.cms.gov/Medicare/Health-Plans/MedicareAdvtgSpecRateStats/Announcements-and-Documents">cms.gov</a>.</p>
 <p>These models generate risk scores by adding relative risk factors, demographics, and disease information. Additionally, they use hierarchies where the most severe manifestation of a condition is considered for risk scores.</p>
 </section>
-<section id="risk-score-calculation" class="level2" data-number="10.6">
-<h2 data-number="10.6" class="anchored" data-anchor-id="risk-score-calculation"><span class="header-section-number">10.6</span> Risk Score Calculation</h2>
+<section id="risk-score-calculation" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="risk-score-calculation"><span class="header-section-number">11.6</span> Risk Score Calculation</h2>
 <p>Several resources are needed to calculate risk scores.</p>
 <ul>
 <li>Annual Rate Announcements for the applicable payment year (found on <a href="https://www.cms.gov/Medicare/Health-Plans/MedicareAdvtgSpecRateStats/Announcements-and-Documents">cms.gov</a>)</li>
@@ -381,13 +386,13 @@ ul.task-list li input[type="checkbox"] {
 <li>Calculate the raw risk scores for each patient, then apply the normalization factors and the MA coding pattern adjustment factors from the appropriate payment year’s rate announcement document to calculate the normalized and payment risk scores.</li>
 </ol>
 </section>
-<section id="cms-risk-adjustment-files" class="level2" data-number="10.7">
-<h2 data-number="10.7" class="anchored" data-anchor-id="cms-risk-adjustment-files"><span class="header-section-number">10.7</span> CMS Risk Adjustment Files</h2>
+<section id="cms-risk-adjustment-files" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="cms-risk-adjustment-files"><span class="header-section-number">11.7</span> CMS Risk Adjustment Files</h2>
 <p>The Monthly Membership Detail Report (MMR) and Model Output Report (MOR) are two types of files that CMS sends to Medicare Advantage organizations (MAOs). The files, in additional to other resources from CMS, are used to calculate the CMS HCC risk adjustment factor (RAF) scores.</p>
 <p>CMS shares these files through the Medicare Advantage Prescription Drug (MARx) system and through the Health Plan Management System (HPMS).</p>
 <p>MAOs can refer to the Plan Communications User Guide (<a href="https://www.cms.gov/files/document/plan-communications-user-guide-august-31-2023-v172.pdf">PCUG</a>) for additional details on the files exchanged through the MARx system.</p>
-<section id="monthly-membership-detail-report-mmr" class="level3" data-number="10.7.1">
-<h3 data-number="10.7.1" class="anchored" data-anchor-id="monthly-membership-detail-report-mmr"><span class="header-section-number">10.7.1</span> Monthly Membership Detail Report (MMR)</h3>
+<section id="monthly-membership-detail-report-mmr" class="level3" data-number="11.7.1">
+<h3 data-number="11.7.1" class="anchored" data-anchor-id="monthly-membership-detail-report-mmr"><span class="header-section-number">11.7.1</span> Monthly Membership Detail Report (MMR)</h3>
 <p>The MMRs contain member eligibility, risk scores, and prospective payments the MAO receives for each member in the upcoming month. They also contain retroactive adjustments to prior months’ records. This file contains the data for both Part C and Part D members. The key pieces of data to get from the MMR are:</p>
 <ul>
 <li><strong>Eligibility</strong>: Understanding eligibility is a pre-requisite for modeling risk adjustment. The MMR has very detailed information regarding eligibility, including retrospective enrollments and disenrollment data. Just because a member exists in the MMR file, does not mean that they are eligible and should be included in risk adjustment.</li>
@@ -395,18 +400,18 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Risk Scores</strong>: The MMR will also disclose risk scores for a patient but only for certain time periods (start of the year, mid-year, and final). This can be used to understand funded premium, or validate calculated risk scores.</li>
 </ul>
 </section>
-<section id="mao-004" class="level3" data-number="10.7.2">
-<h3 data-number="10.7.2" class="anchored" data-anchor-id="mao-004"><span class="header-section-number">10.7.2</span> MAO-004</h3>
+<section id="mao-004" class="level3" data-number="11.7.2">
+<h3 data-number="11.7.2" class="anchored" data-anchor-id="mao-004"><span class="header-section-number">11.7.2</span> MAO-004</h3>
 <p>Not all medical claims are eligible for documenting HCCs for medicare risk adjustment. To address this, CMS provides a report called the MAO-004 which will inform Medicare Advantage organizations if a given diagnosis code submitted is eligible for risk adjustment. This file can be helpful for tying out risk score calculations to the MMR.</p>
 </section>
-<section id="model-output-report-mor" class="level3" data-number="10.7.3">
-<h3 data-number="10.7.3" class="anchored" data-anchor-id="model-output-report-mor"><span class="header-section-number">10.7.3</span> Model Output Report (MOR)</h3>
+<section id="model-output-report-mor" class="level3" data-number="11.7.3">
+<h3 data-number="11.7.3" class="anchored" data-anchor-id="model-output-report-mor"><span class="header-section-number">11.7.3</span> Model Output Report (MOR)</h3>
 <p>Similar to MMRs, the MORs contain a record for each member. That record shows the Hierarchical Condition Codes (HCCs) for each member used by the Risk Adjustment System (RAS) to calculate Part C or Part D risk adjustment factors for each beneficiary. There are two varieties of MORs, for Parts C and D respectively, as each uses different models.</p>
 <p>In addition to these monthly files, CMS issues “final” MORs once per year with updated information after the year has ended, and planned runout data has been collected.</p>
 </section>
 </section>
-<section id="sample-risk-score-calculation-of-a-single-patient" class="level2" data-number="10.8">
-<h2 data-number="10.8" class="anchored" data-anchor-id="sample-risk-score-calculation-of-a-single-patient"><span class="header-section-number">10.8</span> Sample Risk Score Calculation of a single patient</h2>
+<section id="sample-risk-score-calculation-of-a-single-patient" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="sample-risk-score-calculation-of-a-single-patient"><span class="header-section-number">11.8</span> Sample Risk Score Calculation of a single patient</h2>
 <p>Let’s walk through a single example with a single patient as to how the risk score is calculated in the context of medicare advantage for the year 2024.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -454,8 +459,8 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <p>Walking through the steps listed above:</p>
-<section id="calculate-the-demographic-score" class="level3" data-number="10.8.1">
-<h3 data-number="10.8.1" class="anchored" data-anchor-id="calculate-the-demographic-score"><span class="header-section-number">10.8.1</span> Calculate the demographic score</h3>
+<section id="calculate-the-demographic-score" class="level3" data-number="11.8.1">
+<h3 data-number="11.8.1" class="anchored" data-anchor-id="calculate-the-demographic-score"><span class="header-section-number">11.8.1</span> Calculate the demographic score</h3>
 <p>To calculate the demographics portion of the risk score, we need to look at the demographics information for the patient provided above. Let’s take a look at a table from the <a href="https://www.cms.gov/files/document/2024-announcement-pdf.pdf">2024 final rule</a> that contains the raw factors related to demographics.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -470,8 +475,8 @@ ul.task-list li input[type="checkbox"] {
 <p>The final raw risk from demographics is (0.485 + 0.103) = <strong>0.588</strong></p>
 <p>If the patient was an end stage renal disease (ESRD) patient, we would use a separate demographics table that uses the ESRD risk adjustment model.</p>
 </section>
-<section id="calculate-the-disease-score" class="level3" data-number="10.8.2">
-<h3 data-number="10.8.2" class="anchored" data-anchor-id="calculate-the-disease-score"><span class="header-section-number">10.8.2</span> Calculate the Disease Score</h3>
+<section id="calculate-the-disease-score" class="level3" data-number="11.8.2">
+<h3 data-number="11.8.2" class="anchored" data-anchor-id="calculate-the-disease-score"><span class="header-section-number">11.8.2</span> Calculate the Disease Score</h3>
 <p>The disease score can be sourced from multiple places, either the MOR or claims data in combination with MAO-004 report. This example will be looking at calculating risk from claims data.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -514,19 +519,19 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="bringing-it-all-together" class="level3" data-number="10.8.3">
-<h3 data-number="10.8.3" class="anchored" data-anchor-id="bringing-it-all-together"><span class="header-section-number">10.8.3</span> Bringing it all together</h3>
+<section id="bringing-it-all-together" class="level3" data-number="11.8.3">
+<h3 data-number="11.8.3" class="anchored" data-anchor-id="bringing-it-all-together"><span class="header-section-number">11.8.3</span> Bringing it all together</h3>
 <p>We sum both the demographic score and the disease score to get the final raw raf for the patient. (0.588 + 0.166) = <strong>0.754</strong>. This score is the raw risk score for the patient. To get the final risk score for a patient, the formula is (raw_risk_score / normalization_factor).</p>
 <p>For 2024, the CMS-HCC risk adjustment model normalization factor is <strong>1.015</strong> meaning. For <strong>medicare advantage</strong> organizations, another Coding Pattern Difference Adjustment (aka Coding Intensity Factor CIF) of <a href="https://uscode.house.gov/view.xhtml?req=(title:42%20section:1395w-23%20edition:prelim)">5.9%</a> should be applied on top of the normalization factor.</p>
 <p>So the final risk score for this single patient would be (0.754 / 1.015) * (1 - 0.059) = <strong>0.699</strong></p>
 </section>
-<section id="but-wait-theres-more" class="level3" data-number="10.8.4">
-<h3 data-number="10.8.4" class="anchored" data-anchor-id="but-wait-theres-more"><span class="header-section-number">10.8.4</span> But wait! There’s more</h3>
+<section id="but-wait-theres-more" class="level3" data-number="11.8.4">
+<h3 data-number="11.8.4" class="anchored" data-anchor-id="but-wait-theres-more"><span class="header-section-number">11.8.4</span> But wait! There’s more</h3>
 <p>In the above example, it only looked at the scores and weights for a single risk adjustment model, v28. However, for medicare advantage organizations in the year 2024, final funded risk is not based solely on the outputs of the v28 risk adjustment model. There is a transition period where risk will be determined with a blended model, where 33% of the risk score will be weighted with the v28 model and 67% of the risk score will be weighted with the v24 risk adjustment model.</p>
 <p>What does this mean? This means we have to go back and repeat the steps prior to “Bringing it all together” for the v24 risk adjustment model, then apply the 33% and 67% weighting for v28 and v24 risk scores respectively, then apply normalization factor and CIF to get the final risk score for the patient.</p>
 </section>
-<section id="additional-notes" class="level3" data-number="10.8.5">
-<h3 data-number="10.8.5" class="anchored" data-anchor-id="additional-notes"><span class="header-section-number">10.8.5</span> Additional notes</h3>
+<section id="additional-notes" class="level3" data-number="11.8.5">
+<h3 data-number="11.8.5" class="anchored" data-anchor-id="additional-notes"><span class="header-section-number">11.8.5</span> Additional notes</h3>
 <ul>
 <li>In this specific example, this was looking at the risk adjustment model for Medicare Advantage. Different programs and different use cases can use different risk adjustment models.</li>
 <li>Different years going forward (2025 and 2026) have different weighting of the v24 vs v28 risk adjustment models.</li>
@@ -534,8 +539,8 @@ ul.task-list li input[type="checkbox"] {
 <li>In the context of some CMMI programs, the terms of “coding intensity factor” and “normalization factor” can seem to be the same as the Medicare Advantage definitions, but can be derived in different ways specific to that program.</li>
 </ul>
 </section>
-<section id="references" class="level3" data-number="10.8.6">
-<h3 data-number="10.8.6" class="anchored" data-anchor-id="references"><span class="header-section-number">10.8.6</span> References</h3>
+<section id="references" class="level3" data-number="11.8.6">
+<h3 data-number="11.8.6" class="anchored" data-anchor-id="references"><span class="header-section-number">11.8.6</span> References</h3>
 <ul>
 <li>https://www.milliman.com/en/insight/medicare-advantage-and-the-encounter-data-processing-system-be-prepared</li>
 <li>https://www.cms.gov/files/document/2024-advance-notice-pdf.pdf</li>
@@ -966,7 +971,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./readmissions.html" class="pagination-link" aria-label="Readmissions">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Readmissions</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Readmissions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

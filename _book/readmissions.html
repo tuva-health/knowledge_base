@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>9&nbsp; Readmissions – The Tuva Project</title>
+<title>10&nbsp; Readmissions – The Tuva Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./risk-adjustment.html" rel="next">
-<link href="./encounters.html" rel="prev">
-<link href="./images/tuva-icon.png" rel="icon" type="image/png">
+<link href="./acute-inpatient.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -82,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./readmissions.html">Advanced Topics</a></li><li class="breadcrumb-item"><a href="./readmissions.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Readmissions</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./acute-inpatient.html">Advanced Topics</a></li><li class="breadcrumb-item"><a href="./readmissions.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Readmissions</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -189,14 +188,20 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./acute-inpatient.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Acute Inpatient Stays</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./readmissions.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Readmissions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Readmissions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./risk-adjustment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Risk Adjustment</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Risk Adjustment</span></span></a>
   </div>
 </li>
       </ul>
@@ -211,20 +216,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">9.1</span> Overview</a></li>
-  <li><a href="#cms-readmissions-algorithm" id="toc-cms-readmissions-algorithm" class="nav-link" data-scroll-target="#cms-readmissions-algorithm"><span class="header-section-number">9.2</span> CMS Readmissions Algorithm</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">10.1</span> Overview</a></li>
+  <li><a href="#cms-readmissions-algorithm" id="toc-cms-readmissions-algorithm" class="nav-link" data-scroll-target="#cms-readmissions-algorithm"><span class="header-section-number">10.2</span> CMS Readmissions Algorithm</a>
   <ul class="collapse">
-  <li><a href="#data-requirements" id="toc-data-requirements" class="nav-link" data-scroll-target="#data-requirements"><span class="header-section-number">9.2.1</span> Data Requirements</a></li>
-  <li><a href="#terminology-datasets" id="toc-terminology-datasets" class="nav-link" data-scroll-target="#terminology-datasets"><span class="header-section-number">9.2.2</span> Terminology Datasets</a></li>
-  <li><a href="#index-admission-algorithm" id="toc-index-admission-algorithm" class="nav-link" data-scroll-target="#index-admission-algorithm"><span class="header-section-number">9.2.3</span> Index Admission Algorithm</a></li>
-  <li><a href="#cohort-inclusion-algorithm" id="toc-cohort-inclusion-algorithm" class="nav-link" data-scroll-target="#cohort-inclusion-algorithm"><span class="header-section-number">9.2.4</span> Cohort Inclusion Algorithm</a></li>
-  <li><a href="#cohort-exclusion-algorithm" id="toc-cohort-exclusion-algorithm" class="nav-link" data-scroll-target="#cohort-exclusion-algorithm"><span class="header-section-number">9.2.5</span> Cohort Exclusion Algorithm</a></li>
-  <li><a href="#discharged-alive-and-not-against-medical-advice" id="toc-discharged-alive-and-not-against-medical-advice" class="nav-link" data-scroll-target="#discharged-alive-and-not-against-medical-advice"><span class="header-section-number">9.2.6</span> Discharged Alive and Not Against Medical Advice</a></li>
-  <li><a href="#not-a-transfer" id="toc-not-a-transfer" class="nav-link" data-scroll-target="#not-a-transfer"><span class="header-section-number">9.2.7</span> Not a Transfer</a></li>
-  <li><a href="#not-a-same-day-readmission" id="toc-not-a-same-day-readmission" class="nav-link" data-scroll-target="#not-a-same-day-readmission"><span class="header-section-number">9.2.8</span> Not a Same-day Readmission</a></li>
-  <li><a href="#run-out" id="toc-run-out" class="nav-link" data-scroll-target="#run-out"><span class="header-section-number">9.2.9</span> Run-out</a></li>
-  <li><a href="#planned-admission-algorithm" id="toc-planned-admission-algorithm" class="nav-link" data-scroll-target="#planned-admission-algorithm"><span class="header-section-number">9.2.10</span> Planned Admission Algorithm</a></li>
-  <li><a href="#unplanned-readmission-algorithm" id="toc-unplanned-readmission-algorithm" class="nav-link" data-scroll-target="#unplanned-readmission-algorithm"><span class="header-section-number">9.2.11</span> Unplanned Readmission Algorithm</a></li>
+  <li><a href="#data-requirements" id="toc-data-requirements" class="nav-link" data-scroll-target="#data-requirements"><span class="header-section-number">10.2.1</span> Data Requirements</a></li>
+  <li><a href="#terminology-datasets" id="toc-terminology-datasets" class="nav-link" data-scroll-target="#terminology-datasets"><span class="header-section-number">10.2.2</span> Terminology Datasets</a></li>
+  <li><a href="#index-admission-algorithm" id="toc-index-admission-algorithm" class="nav-link" data-scroll-target="#index-admission-algorithm"><span class="header-section-number">10.2.3</span> Index Admission Algorithm</a></li>
+  <li><a href="#cohort-inclusion-algorithm" id="toc-cohort-inclusion-algorithm" class="nav-link" data-scroll-target="#cohort-inclusion-algorithm"><span class="header-section-number">10.2.4</span> Cohort Inclusion Algorithm</a></li>
+  <li><a href="#cohort-exclusion-algorithm" id="toc-cohort-exclusion-algorithm" class="nav-link" data-scroll-target="#cohort-exclusion-algorithm"><span class="header-section-number">10.2.5</span> Cohort Exclusion Algorithm</a></li>
+  <li><a href="#discharged-alive-and-not-against-medical-advice" id="toc-discharged-alive-and-not-against-medical-advice" class="nav-link" data-scroll-target="#discharged-alive-and-not-against-medical-advice"><span class="header-section-number">10.2.6</span> Discharged Alive and Not Against Medical Advice</a></li>
+  <li><a href="#not-a-transfer" id="toc-not-a-transfer" class="nav-link" data-scroll-target="#not-a-transfer"><span class="header-section-number">10.2.7</span> Not a Transfer</a></li>
+  <li><a href="#not-a-same-day-readmission" id="toc-not-a-same-day-readmission" class="nav-link" data-scroll-target="#not-a-same-day-readmission"><span class="header-section-number">10.2.8</span> Not a Same-day Readmission</a></li>
+  <li><a href="#run-out" id="toc-run-out" class="nav-link" data-scroll-target="#run-out"><span class="header-section-number">10.2.9</span> Run-out</a></li>
+  <li><a href="#planned-admission-algorithm" id="toc-planned-admission-algorithm" class="nav-link" data-scroll-target="#planned-admission-algorithm"><span class="header-section-number">10.2.10</span> Planned Admission Algorithm</a></li>
+  <li><a href="#unplanned-readmission-algorithm" id="toc-unplanned-readmission-algorithm" class="nav-link" data-scroll-target="#unplanned-readmission-algorithm"><span class="header-section-number">10.2.11</span> Unplanned Readmission Algorithm</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -232,9 +237,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./readmissions.html">Advanced Topics</a></li><li class="breadcrumb-item"><a href="./readmissions.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Readmissions</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./acute-inpatient.html">Advanced Topics</a></li><li class="breadcrumb-item"><a href="./readmissions.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Readmissions</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Readmissions</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Readmissions</span></h1>
 </div>
 
 
@@ -252,8 +257,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Hospital readmissions are one of the most common healthcare concepts. They are also one of the most complicated concepts to define and implement as code. Here we provide a general overview of how to calculate a hospital readmission measure.</p>
-<section id="overview" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">9.1</span> Overview</h2>
+<section id="overview" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">10.1</span> Overview</h2>
 <p>There are many different ways to define hospital readmission measures. However every readmission measure is built on two underlying concepts: the index admission and the readmission. The index admission is a hospitalization that qualifies to be included in the readmission measure. Not all hospitalizations will meet the criteria to be index admissions and will therefore not be included in the readmission measure. For example, if a patient dies during a hospitalization, that hospitalization will not be an index admission, and will not be included in the readmission measure. There are many more pieces of logic to define if a hospitalization counts as an index admission for each different readmission measure. For example, hospitalizations for medical treatment of cancer are not index admissions. We explain each piece of logic further below.</p>
 <p>To better understand these fundamental concepts, it is helpful to think of building a readmission measure as follows:</p>
 <ol type="1">
@@ -295,11 +300,11 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="cms-readmissions-algorithm" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="cms-readmissions-algorithm"><span class="header-section-number">9.2</span> CMS Readmissions Algorithm</h2>
+<section id="cms-readmissions-algorithm" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="cms-readmissions-algorithm"><span class="header-section-number">10.2</span> CMS Readmissions Algorithm</h2>
 <p>The All-cause Hospital-wide Readmission Measure (“Hospital-wide Measure”) is the most commonly used readmission measure definition of all. The sections that follow describe how to define and implement the Hospital-wide Measure on EHR data or claims data in your data warehouse. This measure has also been encoded into the Tuva Project, including all necessary terminology datasets and data quality tests.</p>
-<section id="data-requirements" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="data-requirements"><span class="header-section-number">9.2.1</span> Data Requirements</h3>
+<section id="data-requirements" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="data-requirements"><span class="header-section-number">10.2.1</span> Data Requirements</h3>
 <p>The Hospital-wide Measure can be implemented on either EHR data or claims data. Strictly speaking, CMS developed the Hospital-wide Measure to run on Medicare FFS claims data, but CMS explicitly states in their documentation that the measure may be adapted to run against an all-payer patient population.</p>
 <p>The data elements needed to process the readmission measure are listed below.</p>
 <ul>
@@ -336,8 +341,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="terminology-datasets" class="level3" data-number="9.2.2">
-<h3 data-number="9.2.2" class="anchored" data-anchor-id="terminology-datasets"><span class="header-section-number">9.2.2</span> Terminology Datasets</h3>
+<section id="terminology-datasets" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="terminology-datasets"><span class="header-section-number">10.2.2</span> Terminology Datasets</h3>
 <p>The Hospital-wide Measure requires several terminology datasets that are used as lookup tables to create the index admission and readmission. The following is a complete list of the terminology datasets that are needed:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -348,8 +353,8 @@ ul.task-list li input[type="checkbox"] {
 <p>CMS makes these terminology datasets available as files on the quality net website. The links below download two Excel spreadsheets that include all the terminology datasets listed above. - https://qualitynet.cms.gov/files/60943ca9fd340b002259fe16?filename=2021_HWR.xlsx - https://qualitynet.cms.gov/files/6092ab86fd340b002259fda0?filename=YaleMod_CCS_PCS_CM_Map_v2020.xlsx</p>
 <p>These terminology datasets are already included in the Tuva Project.</p>
 </section>
-<section id="index-admission-algorithm" class="level3" data-number="9.2.3">
-<h3 data-number="9.2.3" class="anchored" data-anchor-id="index-admission-algorithm"><span class="header-section-number">9.2.3</span> Index Admission Algorithm</h3>
+<section id="index-admission-algorithm" class="level3" data-number="10.2.3">
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="index-admission-algorithm"><span class="header-section-number">10.2.3</span> Index Admission Algorithm</h3>
 <p>The index admission algorithm is the set of sub-algorithms (i.e.&nbsp;rules) that together determine whether an inpatient admission qualifies as an index admission (i.e.&nbsp;receives an index_admit_flag = 1 or 0). Not every inpatient admission qualifies as an index admission.</p>
 <p>Here are the sub-algorithms used by the Hospital-wide Measure:</p>
 <ol type="1">
@@ -362,8 +367,8 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>If an inpatient admission meets the criteria from all of these sub-algorithms then it qualifies as an index admission. Otherwise it does not. Below we walk through each sub-algorithm.</p>
 </section>
-<section id="cohort-inclusion-algorithm" class="level3" data-number="9.2.4">
-<h3 data-number="9.2.4" class="anchored" data-anchor-id="cohort-inclusion-algorithm"><span class="header-section-number">9.2.4</span> Cohort Inclusion Algorithm</h3>
+<section id="cohort-inclusion-algorithm" class="level3" data-number="10.2.4">
+<h3 data-number="10.2.4" class="anchored" data-anchor-id="cohort-inclusion-algorithm"><span class="header-section-number">10.2.4</span> Cohort Inclusion Algorithm</h3>
 <p>The cohort inclusion algorithm is a set of rules that determine whether an inpatient admission belongs to 1 or more specialty categories. In order to qualify as an index admission, an inpatient admission must belong to 1 or more of these 5 specialty categories:</p>
 <ol type="1">
 <li>Medicine</li>
@@ -388,17 +393,17 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="cohort-exclusion-algorithm" class="level3" data-number="9.2.5">
-<h3 data-number="9.2.5" class="anchored" data-anchor-id="cohort-exclusion-algorithm"><span class="header-section-number">9.2.5</span> Cohort Exclusion Algorithm</h3>
+<section id="cohort-exclusion-algorithm" class="level3" data-number="10.2.5">
+<h3 data-number="10.2.5" class="anchored" data-anchor-id="cohort-exclusion-algorithm"><span class="header-section-number">10.2.5</span> Cohort Exclusion Algorithm</h3>
 <p>An inpatient admission does not qualify as an index admission if the primary reason for the index admission was related to cancer, rehabilitation, or mental health. These categories are defined in the HWR Cohort Exclusion terminology dataset (terminology dataset #3). In order to use this dataset, first map all primary ICD-10-CM codes to the Custom CCS mapping dataset and then lookup whether each inpatient admission had any of these CCS condition categories.</p>
 <p>Inpatient admissions that do not map to any of these CCS condition categories pass this criteria for inclusion as an index admission.</p>
 </section>
-<section id="discharged-alive-and-not-against-medical-advice" class="level3" data-number="9.2.6">
-<h3 data-number="9.2.6" class="anchored" data-anchor-id="discharged-alive-and-not-against-medical-advice"><span class="header-section-number">9.2.6</span> Discharged Alive and Not Against Medical Advice</h3>
+<section id="discharged-alive-and-not-against-medical-advice" class="level3" data-number="10.2.6">
+<h3 data-number="10.2.6" class="anchored" data-anchor-id="discharged-alive-and-not-against-medical-advice"><span class="header-section-number">10.2.6</span> Discharged Alive and Not Against Medical Advice</h3>
 <p>In order to qualify as an index admission the inpatient admission must not have a discharge status of 20 (‘expired’) or 07 (‘left against medical advice’).</p>
 </section>
-<section id="not-a-transfer" class="level3" data-number="9.2.7">
-<h3 data-number="9.2.7" class="anchored" data-anchor-id="not-a-transfer"><span class="header-section-number">9.2.7</span> Not a Transfer</h3>
+<section id="not-a-transfer" class="level3" data-number="10.2.7">
+<h3 data-number="10.2.7" class="anchored" data-anchor-id="not-a-transfer"><span class="header-section-number">10.2.7</span> Not a Transfer</h3>
 <p>Inpatient admissions that result in the patient being transferred to another acute care facility do not count as index admissions. However, the subsequent transfer does count as an index admission if:</p>
 <ul>
 <li>The patient is discharged alive and not against medical advice</li>
@@ -407,17 +412,17 @@ ul.task-list li input[type="checkbox"] {
 <p>Importantly, the transfer does not necessarily have to meet the other index admission criteria. For example, the transfer does not have to pass the cohort inclusion algorithm as long as the initial admission does.</p>
 <p>A transfer is defined as occurring if a patient is discharged from an acute care hospital and admitted to another acute care hospital on the same day or the following day. No other criteria such as discharge status or admit source is required to define a transfer.</p>
 </section>
-<section id="not-a-same-day-readmission" class="level3" data-number="9.2.8">
-<h3 data-number="9.2.8" class="anchored" data-anchor-id="not-a-same-day-readmission"><span class="header-section-number">9.2.8</span> Not a Same-day Readmission</h3>
+<section id="not-a-same-day-readmission" class="level3" data-number="10.2.8">
+<h3 data-number="10.2.8" class="anchored" data-anchor-id="not-a-same-day-readmission"><span class="header-section-number">10.2.8</span> Not a Same-day Readmission</h3>
 <p>An inpatient admission is not considered an index admission if the patient is readmitted to the same hospital on the same day they were discharged from a previous admission for the same condition. In this situation, the readmission itself qualifies as the index admission.</p>
 </section>
-<section id="run-out" class="level3" data-number="9.2.9">
-<h3 data-number="9.2.9" class="anchored" data-anchor-id="run-out"><span class="header-section-number">9.2.9</span> Run-out</h3>
+<section id="run-out" class="level3" data-number="10.2.9">
+<h3 data-number="10.2.9" class="anchored" data-anchor-id="run-out"><span class="header-section-number">10.2.9</span> Run-out</h3>
 <p>In order to qualify as an index admission, the admission must occur at least 30 days before the last date of discharge in the dataset.</p>
 <p>For example, suppose your dataset contains inpatient admissions that occurred in calendar year 2018. Without this rule, admissions in this dataset that occurred on the last date in the dataset (i.e.&nbsp;December 31, 2018) could be flagged as index admissions but would never have an associated readmission because the data does not exist. As a result the readmission measure for the month of December 2018 would be artificially low (there would be a typical number of index admissions but fewer than typical readmissions simply because the data does not exist).</p>
 </section>
-<section id="planned-admission-algorithm" class="level3" data-number="9.2.10">
-<h3 data-number="9.2.10" class="anchored" data-anchor-id="planned-admission-algorithm"><span class="header-section-number">9.2.10</span> Planned Admission Algorithm</h3>
+<section id="planned-admission-algorithm" class="level3" data-number="10.2.10">
+<h3 data-number="10.2.10" class="anchored" data-anchor-id="planned-admission-algorithm"><span class="header-section-number">10.2.10</span> Planned Admission Algorithm</h3>
 <p>The planned readmission algorithm is used to exclude planned admissions from being flagged as readmissions in the Hospital-wide Measure. Terminology datasets #4-7 are used in this algorithm.</p>
 <p>Here are the steps to implement the algorithm:</p>
 <ol type="1">
@@ -434,8 +439,8 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="unplanned-readmission-algorithm" class="level3" data-number="9.2.11">
-<h3 data-number="9.2.11" class="anchored" data-anchor-id="unplanned-readmission-algorithm"><span class="header-section-number">9.2.11</span> Unplanned Readmission Algorithm</h3>
+<section id="unplanned-readmission-algorithm" class="level3" data-number="10.2.11">
+<h3 data-number="10.2.11" class="anchored" data-anchor-id="unplanned-readmission-algorithm"><span class="header-section-number">10.2.11</span> Unplanned Readmission Algorithm</h3>
 <p>An admission that occurs within 30 days of an index admission is considered a readmission if it meets the criteria below:</p>
 <ul>
 <li>Not a Planned Readmission</li>
@@ -882,13 +887,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./encounters.html" class="pagination-link" aria-label="Encounters">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Encounters</span></span>
+      <a href="./acute-inpatient.html" class="pagination-link" aria-label="Acute Inpatient Stays">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Acute Inpatient Stays</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./risk-adjustment.html" class="pagination-link" aria-label="Risk Adjustment">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Risk Adjustment</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Risk Adjustment</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
