@@ -1,6 +1,2 @@
-[build]
-  command = "quarto render"   # Build the Quarto site
-  publish = "_site"           # Directory to deploy (Quarto outputs here)
-
 [[plugins]]
-  package = "@netlify/plugin-quarto" # Use the official Quarto plugin
+package = "@quarto/netlify-plugin-quarto"
