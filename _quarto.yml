@@ -1,23 +1,6 @@
 project:
   type: book
 
-# website:
-#   site-url: https://www.thetuvaproject.com
-#   site-path: /knowledge
-#   title: "The Tuva Project"
-#   logo: img/TheTuvaProjectLogo.png
-
-website:
-  # title: "The Tuva Project"
-  navbar:
-    brand:
-      # text: "The Tuva Project"
-      href: index.qmd
-      image: img/TheTuvaProjectLogo.png
-    left:
-      - text: "Home"
-        href: index.qmd
-
 book:
   title: The Tuva Project
   # author: "Norah Jones"
