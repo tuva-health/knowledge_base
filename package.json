@@ -1,5 +1,5 @@
 {
-    "dependencies": {
-      "@quarto/netlify-plugin-quarto": "^0.0.5"
+    "devDependencies": {
+        "@quarto/netlify-plugin-quarto": "^0.0.5"
     }
 }
